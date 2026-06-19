@@ -11,7 +11,33 @@ It ensures every project follows the same structure, including:
 - Centralized response handling
 - Clean separation of concerns
 
+## Architecture Overview
 
+```
+laravel-app/
+├── app/
+│   ├── Repositories/
+│   ├── Interfaces/
+│   ├── DTOs/
+│   ├── Responses/
+│   ├── Traits/
+│   └── Http/
+│
+├── app/Providers/
+│   └── RepositoryServiceProvider.php
+│
+├── routes/
+├── database/
+├── tests/
+│
+├── .ai/
+│   ├── KNOWLEDGE.md
+│   ├── README.md
+│   └── RULES.md   (optional but useful)
+│
+├── composer.json
+└── artisan
+```
 
 ## How to Use This Repository
 
