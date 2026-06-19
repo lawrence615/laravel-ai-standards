@@ -45,8 +45,16 @@ laravel-app/
 
 ```bash
 $ cd /path/to/your/laravel/project
-$ git clone git@github.com:yourname/laravel-ai-standards.git .ai
+$ git clone https://github.com/lawrence615/laravel-ai-standards.git .ai
 ```
+
+Then add `.ai/` to your project’s `.gitignore` so the cloned directory is not committed into your main repository:
+
+```bash
+echo ".ai/" >> .gitignore
+```
+
+Note: Some IDEs may take a moment to detect the new `.ai` directory. If it does not appear immediately, refresh the project explorer or wait for the IDE’s file index to update.
 
 ### Option 2: Reference manually
 Developers can copy relevant sections into their Laravel project under:
