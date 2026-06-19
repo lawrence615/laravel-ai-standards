@@ -15,7 +15,7 @@ Example:
 
 ```php
 public function __construct(
-    private readonly ClientKycRepositoryInterface $clientKycRepository
+    private readonly UserRepositoryInterface $userRepository
 ) {}
 ```
 
@@ -25,7 +25,7 @@ All bindings must be registered in `app/Providers/RepositoryServiceProvider.php`
 Example:
 
 ```php
-$this->app->bind(ClientKycRepositoryInterface::class, ClientKycRepository::class);
+$this->app->bind(UserRepositoryInterface::class, UserRepository::class);
 ```
 
 ## DTOs
@@ -94,13 +94,21 @@ class ApiResponse
 }
 ```
 
+### ✔ Naming rule
+Instead of only `ApiResponse`, allow:
+- `ApiResponse` → general API responses
+- `AuthResponse` → authentication-related responses
+- `UserApiResponse` → user-specific API responses
+
+But keep **ApiResponse as the base standard**.
+
 ## Traits
 Use Traits only for reusable cross-cutting concerns.
 
 Examples:
-- Phone normalization
+- Data formatting
 - Audit logging
-- Common hel
+- Common helpers
 
 ### Location
 app/Traits/
@@ -108,4 +116,9 @@ app/Traits/
 ## Controllers
 Controllers should only handle HTTP requests and responses.
 They should delegate business logic to services. Controllers should remain thin.
+
+Controllers must NEVER:
+- return response()->json()
+- format API responses manually
+- handle DB rollbacks
 
