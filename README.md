@@ -64,6 +64,18 @@ Developers can copy relevant sections into their Laravel project under:
 ### Option 3: As a starter template
 This repository can be used as a base for Laravel projects where architecture consistency is required.
 
+## Loading the Standards into Your AI Assistant
+
+After cloning, make your AI assistant aware of the standards so it can follow them automatically.
+
+1. Open your AI assistant chat.
+2. Drag `.ai/KNOWLEDGE.md` into the prompt.
+3. Ask the assistant to read and memorize the rules.
+
+If the file is not visible in the IDE explorer, try refreshing the project tree or opening the file directly from your file manager.
+
+Once the assistant has memorized the rules, you can start building features. The assistant will enforce the repository pattern, DTOs, Form Requests, centralized response classes, and other defined conventions.
+
 ---
 
 ### ✔ You can also add a “Who is this for?”
